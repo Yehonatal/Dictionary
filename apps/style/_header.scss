@@ -19,12 +19,53 @@
             gap: 10px;
             padding: 0 10px;
             border-right: 1px solid var(--accent-color);
+            position: relative;
 
-            button {
+            button,
+            p {
                 cursor: pointer;
                 border: none;
                 outline: none;
                 background-color: transparent;
+
+                /*   img {
+                    transform: rotate(180deg);
+                } */
+            }
+
+            // Menu styles
+            .menu {
+                position: absolute;
+                top: 30px;
+                left: -72px;
+                width: 150px;
+                padding: 10px 25px 10px 10px;
+                font-size: 0.85rem;
+                box-shadow: 5px 5px 15px var(--shadow);
+                background-color: white;
+                border-radius: 14px;
+
+                li {
+                    border: 2px solid transparent;
+                    padding: 5px 15px;
+                    cursor: pointer;
+
+                    transition: all 0.8s ease-in-out;
+
+                    &:hover {
+                        background-color: #f6faf0;
+                    }
+
+                    &:hover:not(:last-child) {
+                        border-radius: 8px 8px 0 0;
+                        border-bottom: 2px solid var(--accent-color);
+                    }
+
+                    &:hover:last-child {
+                        border-radius: 0 0 8px 8px;
+                        border-top: 2px solid var(--accent-color);
+                    }
+                }
             }
         }
 
@@ -48,25 +89,42 @@
 
 .box {
     background-color: var(--txt-color-2);
-    height: 22px;
+    height: 19px;
     width: 40px;
     border-radius: 15px;
     position: relative;
 
-    .ball,
-    .ball_ {
+    .ball {
         position: absolute;
         top: 3px;
-        left: 3.5px;
-        // border: 1px solid lightblue;
-        height: 16px;
-        width: 16px;
+        left: 3.2px;
+        height: 13px;
+        width: 13px;
         border-radius: 50%;
-        cursor: pointer;
-    }
-    .ball_ {
         background-color: white;
+        cursor: pointer;
+
+        // Animation
+        transition: scale 200ms ease-in-out;
+        &:hover,
+        &:active {
+            scale: 1.75;
+            border: 2px solid var(--accent-color);
+        }
+    }
+    /*   .ball_ {
         left: 20.5px;
+    } */
+}
+.picker-icon {
+    transition: all 1s linear;
+    cursor: pointer;
+
+    svg path {
+        // Animation
+        &:hover {
+            fill: var(--accent-color);
+        }
     }
 }
 
@@ -74,11 +132,12 @@
     margin: 40px 20px;
     padding: 10px 25px;
     border-radius: 15px;
-    background-color: rgb(246, 250, 240);
+    background-color: #f6faf0;
 
     .input {
         width: 100%;
     }
+
     input {
         background-color: transparent;
         width: 100%;
@@ -99,5 +158,30 @@
         img {
             width: 20px;
         }
+
+        // Animation
+        transition: scale 200ms ease-in-out;
+        &:hover,
+        &:active {
+            scale: 1.15;
+        }
     }
+}
+
+// Menu Function
+.menu.hidden {
+    display: none;
+}
+
+.San-Serif,
+#San-Serif {
+    font-family: sans-serif !important;
+}
+.Serif,
+#Serif {
+    font-family: serif !important;
+}
+.Mono,
+#Mono {
+    font-family: monospace !important;
 }
