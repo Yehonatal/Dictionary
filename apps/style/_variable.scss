@@ -1,10 +1,12 @@
 $ff-family: serif, sans-serif, monospace;
+$size: 16px;
 
 .dark {
     --bg-color: rgb(0, 0, 0);
     --txt-color: rgb(255, 255, 255);
     --txt-color-2: rgb(117, 117, 117);
-    --accent-color: rgb(164, 69, 237);
+    --accent-color: #a445ed;
+    --shadow: #141d2f4d;
 }
 
 .light {
@@ -12,4 +14,5 @@ $ff-family: serif, sans-serif, monospace;
     --txt-color: rgb(0, 0, 0);
     --txt-color-2: rgb(117, 117, 117);
     --accent-color: rgb(164, 69, 237);
+    --shadow: #141d2f20;
 }

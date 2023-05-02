@@ -1,0 +1,103 @@
+.header {
+    padding-top: 25px;
+    justify-content: space-between;
+    margin: 20px;
+
+    font-size: $size;
+    color: var(--txt-color-2);
+    font-weight: bold;
+
+    .logo {
+        a img {
+            width: 30px;
+        }
+    }
+    .options {
+        gap: 20px;
+
+        .font {
+            gap: 10px;
+            padding: 0 10px;
+            border-right: 1px solid var(--accent-color);
+
+            button {
+                cursor: pointer;
+                border: none;
+                outline: none;
+                background-color: transparent;
+            }
+        }
+
+        .theme {
+            gap: 10px;
+
+            .picker-icon {
+                img {
+                    width: 20px;
+                }
+            }
+        }
+    }
+}
+
+.flex {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.box {
+    background-color: var(--txt-color-2);
+    height: 22px;
+    width: 40px;
+    border-radius: 15px;
+    position: relative;
+
+    .ball,
+    .ball_ {
+        position: absolute;
+        top: 3px;
+        left: 3.5px;
+        // border: 1px solid lightblue;
+        height: 16px;
+        width: 16px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    .ball_ {
+        background-color: white;
+        left: 20.5px;
+    }
+}
+
+.search {
+    margin: 40px 20px;
+    padding: 10px 25px;
+    border-radius: 15px;
+    background-color: rgb(246, 250, 240);
+
+    .input {
+        width: 100%;
+    }
+    input {
+        background-color: transparent;
+        width: 100%;
+        outline: none;
+        border: none;
+        font-weight: bold;
+        font-size: 1rem;
+        font-family: inherit;
+    }
+
+    button {
+        cursor: pointer;
+        border: none;
+        outline: none;
+        margin-left: 10px;
+        background-color: transparent;
+
+        img {
+            width: 20px;
+        }
+    }
+}

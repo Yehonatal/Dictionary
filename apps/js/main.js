@@ -1,7 +1,6 @@
 const body = document.querySelector("body");
-const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-if (isDarkMode) {
+if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
     // body.classList.add("dark");
     body.classList.add("light");
 } else {
