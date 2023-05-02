@@ -28,6 +28,7 @@
                 outline: none;
                 background-color: transparent;
                 font-size: 1rem;
+                color: var(--txt-main);
 
                 /*   img {
                     transform: rotate(180deg);
@@ -87,36 +88,85 @@
     flex-direction: row;
     align-items: center;
 }
-
-.box {
-    background-color: var(--txt-color-2);
-    height: 19px;
-    width: 40px;
-    border-radius: 15px;
-    position: relative;
-
-    .ball {
-        position: absolute;
-        top: 3px;
-        left: 3.2px;
-        height: 13px;
-        width: 13px;
-        border-radius: 50%;
-        background-color: white;
+.picker {
+    label {
+        background-color: var(--accent-color);
+        height: 19px;
+        width: 40px;
+        position: relative;
         cursor: pointer;
 
-        // Animation
-        transition: scale 200ms ease-in-out;
-        &:hover,
-        &:active {
-            scale: 1.75;
-            border: 2px solid var(--accent-color);
+        border-radius: 50px;
+        display: flex;
+        padding: 3px;
+        gap: 0.5em;
+
+        .ball {
+            position: absolute;
+            top: 3px;
+            left: 3.2px;
+            height: 13px;
+            width: 13px;
+            border-radius: 50%;
+            background-color: white;
+            border: 1px solid transparent;
+            cursor: pointer;
+
+            transition: all 0.5s ease-in;
+            &:hover,
+            &:active {
+                border: 2px solid var(--accent-color);
+                top: -1.5px;
+                left: -1px;
+                height: 21px;
+                width: 21px;
+                box-shadow: 0 0 50px #000000;
+            }
         }
     }
-    /*   .ball_ {
-        left: 20.5px;
-    } */
+
+    // Toggle
+    input[type="checkbox"] {
+        display: none;
+        transition: transform 1.5s linear;
+
+        &:checked + label .ball {
+            transform: translateX(20.5px);
+            top: -5px;
+            left: -1px;
+            height: 23px;
+            width: 23px;
+            position: relative;
+
+            border-radius: 50%;
+            background-color: #fdb813;
+            box-shadow: 0 0 25px #fdb813;
+
+            &:before {
+                ::before {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    border-radius: 50%;
+                    background-image: radial-gradient(
+                        rgba(253, 184, 19, 0.8) 30%,
+                        rgba(255, 255, 255, 0) 70%
+                    );
+                    animation: sunrays 5s linear infinite;
+                }
+            }
+        }
+        &:checked + .picker-icon svg {
+            height: 50px;
+            width: 50px;
+
+            path {
+                fill: black;
+            }
+        }
+    }
 }
+
 .picker-icon {
     transition: all 1s linear;
     cursor: pointer;
@@ -133,7 +183,7 @@
     margin: 40px 20px;
     padding: 10px 25px;
     border-radius: 15px;
-    background-color: #f6faf0;
+    background-color: var(--search);
 
     .input {
         width: 100%;
@@ -147,6 +197,11 @@
         font-weight: bold;
         font-size: 1rem;
         font-family: inherit;
+        color: var(--txt-main);
+
+        &::placeholder {
+            color: var(--txt-color-2);
+        }
     }
 
     button {
