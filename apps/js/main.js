@@ -12,10 +12,11 @@ const arrow = document.querySelector(".font");
 const menu = document.querySelector(".menu");
 const font = document.querySelector(".font");
 
-let currentFont = "Serif";
+const storedFontFamily = localStorage.getItem("fontFamily");
 
 window.onload = () => {
-    font.querySelector("p").innerText = currentFont;
+    font.querySelector("p").innerText = storedFontFamily;
+    body.setAttribute("id", storedFontFamily);
 };
 
 arrow.addEventListener("click", (e) => {
@@ -24,12 +25,15 @@ arrow.addEventListener("click", (e) => {
         menu.classList.contains("hidden") ? "rotate(360deg)" : "rotate(180deg)";
 });
 
-menu.addEventListener("click", (event) => {
-    if (event.target.nodeName === "LI") {
-        const selectedLi = event.target;
+menu.addEventListener("click", (e) => {
+    if (e.target.nodeName === "LI") {
+        const selectedLi = e.target;
         const selectedText = selectedLi.innerText;
 
         font.querySelector("p").innerText = selectedText;
         body.setAttribute("id", selectedText);
+
+        // Store the users choice in the local storage
+        localStorage.setItem("fontFamily", selectedText);
     }
 });

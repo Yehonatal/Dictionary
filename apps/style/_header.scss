@@ -27,6 +27,7 @@
                 border: none;
                 outline: none;
                 background-color: transparent;
+                font-size: 1rem;
 
                 /*   img {
                     transform: rotate(180deg);
@@ -166,22 +167,4 @@
             scale: 1.15;
         }
     }
-}
-
-// Menu Function
-.menu.hidden {
-    display: none;
-}
-
-.San-Serif,
-#San-Serif {
-    font-family: sans-serif !important;
-}
-.Serif,
-#Serif {
-    font-family: serif !important;
-}
-.Mono,
-#Mono {
-    font-family: monospace !important;
 }
