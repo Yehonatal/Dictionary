@@ -74,6 +74,8 @@ body {
     font-weight: bold;
     font-size: 16px;
 
+    transition: background-color 800ms ease-in-out;
+
     @include breakpoints-up(medium) {
         display: flex;
         flex-direction: column;
