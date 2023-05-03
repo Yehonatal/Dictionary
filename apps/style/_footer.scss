@@ -1,0 +1,12 @@
+footer {
+    font-family: inherit;
+
+    i {
+        scale: 1.45;
+        margin-left: 0.5em;
+        color: var(--accent-color);
+        &:hover {
+            scale: 1.75;
+        }
+    }
+}

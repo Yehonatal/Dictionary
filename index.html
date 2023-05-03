@@ -12,12 +12,22 @@
         <title>Dictionary</title>
 
         <!-- Links -->
+        <style>
+            .attribution {
+                font-size: 9px;
+                text-align: center;
+            }
+            .attribution a {
+                color: hsl(228, 45%, 44%);
+            }
+        </style>
         <link rel="stylesheet" href="apps/style/style.css" />
-        <link
-            rel="shortcut icon"
-            href="assets/images/github-icon.png"
-            type="image/x-icon"
-        />
+
+        <!-- Icons -->
+        <script
+            src="https://kit.fontawesome.com/5b12988027.js"
+            crossorigin="anonymous"
+        ></script>
     </head>
     <body>
         <!-- Logo, Font and Theme Picker -->
@@ -135,9 +145,7 @@
                         </div>
 
                         <div>
-                            <button
-                                onclick="playAudio('https\:\/\/api.dictionaryapi.dev/media/pronunciations/en/dictionary-uk.mp3')"
-                            >
+                            <button onclick="playAudio('')">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="75"
@@ -188,6 +196,13 @@
                             to words and definitions in a physical dictionary.
                         </li>
                     </ol>
+                    <div class="syn-list">
+                        <h4>Synonyms</h4>
+                        <ul>
+                            <li><a href="#wordbook">wordbook</a></li>
+                        </ul>
+                    </div>
+                    <div class="ant-list"></div>
                     <div class="meaning">
                         <div class="speech-type"><h2>verb</h2></div>
                         <hr />
@@ -198,9 +213,32 @@
                         <li>To add to a dictionary.</li>
                         <li>To compile a dictionary.</li>
                     </ol>
+                    <div class="syn-list"></div>
+                    <div class="ant-list"></div>
+                </div>
+                <hr class="line" />
+                <div class="source">
+                    <p>Source:</p>
+                    <a href="https://en.wiktionary.org/wiki/dictionary"
+                        >https://en.wiktionary.org/wiki/dictionary:
+                        <img src="assets/images/icon-new-window.svg" alt=""
+                    /></a>
                 </div>
             </div>
         </main>
+
+        <!-- Footer -->
+        <footer class="attribution">
+            made with &#128151; by
+
+            <a
+                target="_blank"
+                class="impoText"
+                href="https://github.com/R4nn3r"
+            >
+                <i class="fa-brands fa-github-alt"></i>
+            </a>
+        </footer>
 
         <script src="apps/js/main.js"></script>
     </body>

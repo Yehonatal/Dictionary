@@ -155,12 +155,78 @@ function renderData(data) {
                 ul.appendChild(li);
             });
 
+            // Synonyms
+            const synonyms = meaning.synonyms;
+            const synDiv = document.createElement("div");
+            synDiv.className = "syn-list";
+
+            if (synonyms.length >= 1) {
+                const synList = document.createElement("ul");
+                const synTitle = document.createElement("h4");
+                synTitle.innerText = "Synonyms";
+
+                synonyms.forEach(function (word) {
+                    const a = document.createElement("a");
+                    const li = document.createElement("li");
+                    a.innerText = word;
+                    a.href = "#" + word;
+
+                    li.appendChild(a);
+                    synList.appendChild(li);
+                });
+                synDiv.appendChild(synTitle);
+                synDiv.appendChild(synList);
+            }
+
+            const antonyms = meaning.antonyms;
+            const antDiv = document.createElement("div");
+            antDiv.className = "ant-list";
+
+            if (antonyms.length >= 1) {
+                const antList = document.createElement("ul");
+                const antTitle = document.createElement("h4");
+                antTitle.innerText = "antonyms";
+
+                antonyms.forEach(function (word) {
+                    const a = document.createElement("a");
+                    const li = document.createElement("li");
+                    a.innerText = word;
+                    a.href = "#" + word;
+
+                    li.appendChild(a);
+                    antList.appendChild(li);
+                });
+                antDiv.appendChild(antTitle);
+                antDiv.appendChild(antList);
+            }
+
             block.appendChild(meaningDiv);
             block.appendChild(h4);
             block.appendChild(ul);
+            block.appendChild(synDiv);
+            block.appendChild(antDiv);
 
             container.appendChild(block);
         });
+
+        if (index + 1 == data.length) {
+            const hr = document.createElement("hr");
+            hr.className = "line";
+
+            const source = document.createElement("div");
+            source.className = "source";
+            const p = document.createElement("p");
+            p.innerText = "Source:";
+
+            const link = document.createElement("a");
+            link.href = entry.sourceUrls;
+            link.innerHTML = `${entry.sourceUrls}: <img src="assets/images/icon-new-window.svg" alt="" />`;
+
+            source.appendChild(p);
+            source.appendChild(link);
+            container.appendChild(hr);
+            container.appendChild(source);
+        }
 
         main.appendChild(container);
     });

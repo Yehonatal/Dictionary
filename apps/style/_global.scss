@@ -83,6 +83,10 @@ body {
         padding: 0 20px;
         // scale: 0.95;
     }
+
+    @include breakpoints-down(medium) {
+        font-size: 13px !important;
+    }
 }
 
 header,
@@ -101,7 +105,7 @@ form {
 }
 
 .line {
-    margin: 0 20px;
+    margin: 20px 0;
     padding: 0.5px;
     border: none;
     outline: none;
@@ -117,11 +121,17 @@ form {
 .San-Serif,
 #San-Serif {
     font-family: sans-serif !important;
+}
 
-    body {
-        font-size: 0.75rem !important;
+body#san-serif {
+    // font-size: 0.75rem !important;
+
+    .font p {
+        color: red !important;
+        font-size: 0.15em;
     }
 }
+
 .Serif,
 #Serif {
     font-family: serif !important;

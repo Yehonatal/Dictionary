@@ -9,6 +9,8 @@ $size: 16px;
     --accent-color: #a445ed;
     --shadow: #141d2f4d;
     --search: #f4e6ff38;
+    --list: #a445ed;
+    --list-h: #ffffff;
 }
 
 .light {
@@ -16,7 +18,9 @@ $size: 16px;
     --txt-main: rgb(0, 0, 0);
     --txt-color: rgb(62, 62, 62);
     --txt-color-2: rgb(117, 117, 117);
-    --accent-color: rgb(164, 69, 237);
+    --accent-color: #a445ed;
     --shadow: #141d2f20;
     --search: #f4e6ff;
+    --list: #e6ccfa;
+    --list-h: #a445ed;
 }
