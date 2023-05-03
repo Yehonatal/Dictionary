@@ -82,6 +82,11 @@ function renderData(data) {
         const container = document.createElement("div");
         container.className = "container";
 
+        let audio =
+            entry.length == 2
+                ? entry.phonetics[1].audio
+                : entry.phonetics[index].audio;
+
         let card = `
         <div class="container">
                 <div class="top">
@@ -93,24 +98,24 @@ function renderData(data) {
                     </div>
 
                     <div>
-                        <button>
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="75"
-                                height="75"
-                                viewBox="0 0 75 75"
-                            >
-                                <g fill="#A445ED" fill-rule="evenodd">
-                                    <circle
-                                        cx="37.5"
-                                        cy="37.5"
-                                        r="37.5"
-                                        opacity=".25"
-                                    />
-                                    <path d="M29 27v21l21-10.5z" />
-                                </g>
-                            </svg>
-                        </button>
+                            <button onclick="playAudio('${audio}')">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="75"
+                                    height="75"
+                                    viewBox="0 0 75 75"
+                                >
+                                    <g fill="#A445ED" fill-rule="evenodd">
+                                        <circle
+                                            cx="37.5"
+                                            cy="37.5"
+                                            r="37.5"
+                                            opacity=".25"
+                                        />
+                                        <path d="M29 27v21l21-10.5z" />
+                                    </g>
+                                </svg>
+                            </button>
                     </div>
                 </div>
             </div>
@@ -171,7 +176,7 @@ searchBtn.addEventListener("click", async (event) => {
     let word = inputBtn.value.trim();
     inputBtn.value = "";
     // word = "Love";
-    word = "Keyboard";
+    word.length > 0 ? (word = word) : (word = "error");
 
     try {
         const data = await fetchData(word);
@@ -180,3 +185,8 @@ searchBtn.addEventListener("click", async (event) => {
         console.log(err);
     }
 });
+
+function playAudio(url) {
+    var audio = new Audio(url);
+    audio.play();
+}
