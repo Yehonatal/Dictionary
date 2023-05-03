@@ -86,6 +86,8 @@ body {
 }
 
 header,
+hr,
+main,
 form {
     max-width: 700px;
 
@@ -96,6 +98,15 @@ form {
     @include breakpoints-down(medium) {
         max-width: 650px;
     }
+}
+
+hr {
+    margin: 0 20px;
+    padding: 0.5px;
+    border: none;
+    outline: none;
+    opacity: 0.25;
+    background-color: var(--txt-color-2);
 }
 
 // Menu Function

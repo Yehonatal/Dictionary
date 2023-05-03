@@ -96,9 +96,13 @@
         <!-- Search Bar -->
         <form class="search flex">
             <div class="input">
-                <input type="text" placeholder="Search for any word..." />
+                <input
+                    type="text"
+                    id="input-btn"
+                    placeholder="Search for any word..."
+                />
             </div>
-            <button class="search-btn flex">
+            <button class="search-btn flex" id="search-btn">
                 <span class="hide">link</span>
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -118,7 +122,10 @@
             </button>
         </form>
 
+        <hr />
+
         <!-- Main Content -->
+        <main class="main" id="main"></main>
 
         <script src="apps/js/main.js"></script>
     </body>
