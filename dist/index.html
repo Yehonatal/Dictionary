@@ -127,41 +127,77 @@
         <!-- Main Content -->
         <main class="main" id="main">
             <div class="container">
-                <div class="top">
-                    <div>
-                        <h1>Keyboard<span>1 of 1</span></h1>
-                        <h3>/ˈkiːbɔːd/</h3>
-                    </div>
+                <div class="container">
+                    <div class="top">
+                        <div>
+                            <h1>Dictionary<span>1 of 1</span></h1>
+                            <h3>/ˈdɪkʃəˌnɛɹi/</h3>
+                        </div>
 
-                    <div>
-                        <button>
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="75"
-                                height="75"
-                                viewBox="0 0 75 75"
+                        <div>
+                            <button
+                                onclick="playAudio('https\:\/\/api.dictionaryapi.dev/media/pronunciations/en/dictionary-uk.mp3')"
                             >
-                                <g fill="#A445ED" fill-rule="evenodd">
-                                    <circle
-                                        cx="37.5"
-                                        cy="37.5"
-                                        r="37.5"
-                                        opacity=".25"
-                                    />
-                                    <path d="M29 27v21l21-10.5z" />
-                                </g>
-                            </svg>
-                        </button>
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="75"
+                                    height="75"
+                                    viewBox="0 0 75 75"
+                                >
+                                    <g fill="#A445ED" fill-rule="evenodd">
+                                        <circle
+                                            cx="37.5"
+                                            cy="37.5"
+                                            r="37.5"
+                                            opacity=".25"
+                                        ></circle>
+                                        <path d="M29 27v21l21-10.5z"></path>
+                                    </g>
+                                </svg>
+                            </button>
+                        </div>
                     </div>
                 </div>
-
-                <div class="meaning">
-                    <div class="speech-type"><h2>noun</h2></div>
-                    <hr />
-                </div>
-
                 <div class="bottom">
+                    <div class="meaning">
+                        <div class="speech-type"><h2>noun</h2></div>
+                        <hr />
+                    </div>
                     <h4>Meaning</h4>
+                    <ol>
+                        <li>
+                            A reference work with a list of words from one or
+                            more languages, normally ordered alphabetically,
+                            explaining each word's meaning, and sometimes
+                            containing information on its etymology,
+                            pronunciation, usage, translations, and other data.
+                        </li>
+                        <li>
+                            (preceded by the) A synchronic dictionary of a
+                            standardised language held to only contain words
+                            that are properly part of the language.
+                        </li>
+                        <li>
+                            (by extension) Any work that has a list of material
+                            organized alphabetically; e.g., biographical
+                            dictionary, encyclopedic dictionary.
+                        </li>
+                        <li>
+                            An associative array, a data structure where each
+                            value is referenced by a particular key, analogous
+                            to words and definitions in a physical dictionary.
+                        </li>
+                    </ol>
+                    <div class="meaning">
+                        <div class="speech-type"><h2>verb</h2></div>
+                        <hr />
+                    </div>
+                    <h4>Meaning</h4>
+                    <ol>
+                        <li>To look up in a dictionary.</li>
+                        <li>To add to a dictionary.</li>
+                        <li>To compile a dictionary.</li>
+                    </ol>
                 </div>
             </div>
         </main>
