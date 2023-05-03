@@ -82,18 +82,81 @@ function renderData(data) {
         const container = document.createElement("div");
         container.className = "container";
 
-        const title = document.createElement("h1");
-        title.innerText = titleCase(entry.word);
+        let card = `
+        <div class="container">
+                <div class="top">
+                    <div>
+                        <h1>${titleCase(entry.word)}<span>${index + 1} of ${
+            data.length
+        }</span></h1>
+                        <h3>${entry.phonetic}</h3>
+                    </div>
 
-        const phonetic = document.createElement("h3");
-        phonetic.innerText = entry.phonetic;
+                    <div>
+                        <button>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="75"
+                                height="75"
+                                viewBox="0 0 75 75"
+                            >
+                                <g fill="#A445ED" fill-rule="evenodd">
+                                    <circle
+                                        cx="37.5"
+                                        cy="37.5"
+                                        r="37.5"
+                                        opacity=".25"
+                                    />
+                                    <path d="M29 27v21l21-10.5z" />
+                                </g>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        `;
 
-        const subtitle = document.createElement("span");
-        subtitle.innerText = `${index + 1}/${data.length}`;
+        container.innerHTML = card;
 
-        title.appendChild(subtitle);
-        container.appendChild(title);
-        container.appendChild(phonetic);
+        const block = document.createElement("div");
+        block.className = "bottom";
+
+        // List of Definitions
+        entry.meanings.forEach(function (meaning) {
+            const meaningDiv = document.createElement("div");
+            meaningDiv.classList.add("meaning");
+
+            const speechTypeDiv = document.createElement("div");
+            speechTypeDiv.classList.add("speech-type");
+
+            const speechTypeH2 = document.createElement("h2");
+            speechTypeH2.innerText = meaning.partOfSpeech;
+            speechTypeDiv.appendChild(speechTypeH2);
+
+            meaningDiv.appendChild(speechTypeDiv);
+
+            const hr = document.createElement("hr");
+            meaningDiv.appendChild(hr);
+
+            const h4 = document.createElement("h4");
+            h4.innerText = "Meaning";
+
+            const definitions = meaning.definitions;
+            const ul = document.createElement("ol");
+
+            definitions.forEach(function (def) {
+                const li = document.createElement("li");
+                li.innerText = def.definition;
+                ul.appendChild(li);
+            });
+
+            block.appendChild(meaningDiv);
+            block.appendChild(h4);
+            block.appendChild(ul);
+
+            container.appendChild(block);
+        });
+
         main.appendChild(container);
     });
 }
@@ -105,7 +168,10 @@ function titleCase(str) {
 // Even listener for Search
 searchBtn.addEventListener("click", async (event) => {
     event.preventDefault();
-    const word = inputBtn.value.trim();
+    let word = inputBtn.value.trim();
+    inputBtn.value = "";
+    // word = "Love";
+    word = "Keyboard";
 
     try {
         const data = await fetchData(word);

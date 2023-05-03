@@ -86,7 +86,7 @@ body {
 }
 
 header,
-hr,
+.line,
 main,
 form {
     max-width: 700px;
@@ -100,7 +100,7 @@ form {
     }
 }
 
-hr {
+.line {
     margin: 0 20px;
     padding: 0.5px;
     border: none;
