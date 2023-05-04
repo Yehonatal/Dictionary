@@ -146,7 +146,7 @@ body#san-serif {
 }
 
 .error {
-    background-color: rgb(255, 235, 235) !important;
+    background-color: var(--error) !important;
 
     .search {
         border: 1px solid tomato !important;
