@@ -20,6 +20,9 @@
             padding: 0 10px;
             border-right: 1px solid var(--accent-color);
             position: relative;
+            p {
+                opacity: 0.5;
+            }
 
             button,
             p {
@@ -201,6 +204,7 @@
 
         &::placeholder {
             color: var(--txt-color-2);
+            opacity: 0.35;
         }
 
         &:active {

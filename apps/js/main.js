@@ -72,7 +72,7 @@ async function fetchData(word) {
 
 // Render the data to page
 function renderData(data) {
-    console.log(data);
+    // console.log(data);
     // Remove old Renders
     const containers = document.querySelectorAll(".container");
     containers.forEach((div) => div.remove());
@@ -178,6 +178,7 @@ function renderData(data) {
                 synDiv.appendChild(synList);
             }
 
+            // antonyms
             const antonyms = meaning.antonyms;
             const antDiv = document.createElement("div");
             antDiv.className = "ant-list";
@@ -220,6 +221,7 @@ function renderData(data) {
 
             const link = document.createElement("a");
             link.href = entry.sourceUrls;
+            link.target = "_blank";
             link.innerHTML = `${entry.sourceUrls}: <img src="assets/images/icon-new-window.svg" alt="" />`;
 
             source.appendChild(p);
@@ -252,6 +254,7 @@ searchBtn.addEventListener("click", async (event) => {
     }
 });
 
+// For Audio doesn't work for every word cause some words don't have one
 function playAudio(url) {
     var audio = new Audio(url);
     audio.play();
