@@ -154,7 +154,6 @@ function renderData(data) {
                 li.innerText = def.definition;
                 ul.appendChild(li);
 
-                console.log(def.example);
                 // Added an example if any exist in the definitions
                 if (def.example != undefined) {
                     const innerPara = document.createElement("p");
@@ -255,6 +254,10 @@ searchBtn.addEventListener("click", async (event) => {
     word.length > 0 ? (word = word) : (word = "error");
 
     try {
+        word == "error"
+            ? body.classList.add("error")
+            : body.classList.remove("error");
+
         const data = await fetchData(word);
         renderData(data);
     } catch (err) {

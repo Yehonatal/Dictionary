@@ -153,6 +153,13 @@ function renderData(data) {
                 const li = document.createElement("li");
                 li.innerText = def.definition;
                 ul.appendChild(li);
+
+                // Added an example if any exist in the definitions
+                if (def.example != undefined) {
+                    const innerPara = document.createElement("p");
+                    innerPara.innerText = `"${def.example}"`;
+                    li.appendChild(innerPara);
+                }
             });
 
             // Synonyms
@@ -221,6 +228,7 @@ function renderData(data) {
 
             const link = document.createElement("a");
             link.href = entry.sourceUrls;
+            link.target = "_blank";
             link.innerHTML = `${entry.sourceUrls}: <img src="assets/images/icon-new-window.svg" alt="" />`;
 
             source.appendChild(p);

@@ -49,6 +49,7 @@
                 box-shadow: 5px 5px 15px var(--shadow);
                 background-color: white;
                 border-radius: 14px;
+                z-index: 1;
 
                 li {
                     border: 2px solid transparent;
@@ -187,6 +188,7 @@
     padding: 10px 25px;
     border-radius: 15px;
     background-color: var(--search);
+    transition: all 1s linear;
 
     .input {
         width: 100%;
@@ -206,10 +208,10 @@
             color: var(--txt-color-2);
             opacity: 0.35;
         }
-
-        &:active {
-            background-color: transparent;
-        }
+    }
+    &:active,
+    &:hover {
+        outline: 1px solid var(--accent-color);
     }
 
     button {
