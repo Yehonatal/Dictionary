@@ -144,3 +144,17 @@ body#san-serif {
 .hide {
     display: none;
 }
+
+.error {
+    background-color: var(--error) !important;
+
+    .search {
+        border: 1px solid tomato !important;
+
+        input {
+            &::placeholder {
+                color: tomato !important;
+            }
+        }
+    }
+}

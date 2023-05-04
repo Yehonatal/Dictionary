@@ -254,6 +254,10 @@ searchBtn.addEventListener("click", async (event) => {
     word.length > 0 ? (word = word) : (word = "error");
 
     try {
+        word == "error"
+            ? body.classList.add("error")
+            : body.classList.remove("error");
+
         const data = await fetchData(word);
         renderData(data);
     } catch (err) {

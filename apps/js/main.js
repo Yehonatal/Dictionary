@@ -241,10 +241,12 @@ function renderData(data) {
     });
 }
 
+// Helper functions
 function titleCase(str) {
-    return str[0].toUpperCase() + str.slice(1).toLowerCase();
+    return str.replace(/\w\S*/g, function (txt) {
+        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+    });
 }
-
 // Even listener for Search
 searchBtn.addEventListener("click", async (event) => {
     event.preventDefault();
