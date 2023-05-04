@@ -153,6 +153,14 @@ function renderData(data) {
                 const li = document.createElement("li");
                 li.innerText = def.definition;
                 ul.appendChild(li);
+
+                console.log(def.example);
+                // Added an example if any exist in the definitions
+                if (def.example != undefined) {
+                    const innerPara = document.createElement("p");
+                    innerPara.innerText = `"${def.example}"`;
+                    li.appendChild(innerPara);
+                }
             });
 
             // Synonyms
